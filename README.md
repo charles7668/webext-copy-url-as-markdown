@@ -1,0 +1,2 @@
+# webext-copy-url-as-markdown
+This is a web extension for browsers that simplifies copying the title and URL into a Markdown format string, for example: [title](url)
