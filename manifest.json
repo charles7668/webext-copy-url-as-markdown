@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Copy Title And URL As MarkDown",
-  "version": "1.1",
+  "version": "1.2",
   "description": "Copy tab title and url as markdown format ex : [titile](url)",
   "homepage_url": "https://github.com/charles7668/webext-copy-url-as-markdown",
   "author": "charles",
