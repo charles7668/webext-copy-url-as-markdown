@@ -43,24 +43,13 @@ function copyUrlAsMarkdown(tab) {
 
 // copy selection as markdown format
 function copyAsMarkdownSelection(tab, info) {
-  browser.tabs.executeScript(tab.id, {
-    code: `
-    getSelectedTextHtml = () => {
-      const selection = window.getSelection();
-      let htmlText = '';
-      if (selection.rangeCount > 0) {
-          const range = selection.getRangeAt(0);
-          const container = document.createElement('div');
-          container.appendChild(range.cloneContents());
-          htmlText = container.innerHTML;
-      }
-      let turndownService = new TurndownService();
-      let markdown = turndownService.turndown(htmlText);
-      return markdown;
-    }
-    getSelectedTextHtml();
-    `,
-  }).then(result => {
-    navigator.clipboard.writeText(result);
-  });
+  browser.tabs
+    .executeScript(tab.id, {
+      code: `
+    ConvertHtmlToMarkdown();  
+    `
+    })
+    .then((result) => {
+      navigator.clipboard.writeText(result);
+    });
 }
